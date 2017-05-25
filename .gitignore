@@ -8,6 +8,8 @@
 !03.Rmd
 !references.bib
 !_output.yml
+!_build.R
+!_deploy.sh
 !docs/
 !docs/*
 !docs/*/*
