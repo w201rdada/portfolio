@@ -1,0 +1,20 @@
+bookdown::gitbook:
+  number_sections: FALSE
+  dev: svglite
+  split_by: chapter
+  split_bib: TRUE
+  toc_depth: 2
+  config:
+    toc:
+      collapse: section
+      scroll_highlight: yes
+    sharing:
+      facebook: no
+      twitter: no
+      google: no
+      weibo: no
+      instapper: no
+      vk: no
+      all: no
+    edit: https://github.com/w201rdada/portfolio-MYGITHUBUSER/edit/master/%s
+    download: null

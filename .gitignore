@@ -1,0 +1,17 @@
+#ignore everything
+*
+#except these files
+!.gitignore
+!index.Rmd
+!01.Rmd
+!02.Rmd
+!03.Rmd
+!references.bib
+!_output.yml
+!docs/
+!docs/*
+!docs/*/*
+!docs/*/*/*
+!docs/*/*/*/*
+!docs/*/*/*/*/*
+!docs/*/*/*/*/*/*
