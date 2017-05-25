@@ -13,7 +13,7 @@ Nulla  sint  art party ex, mlkshk disrupt selvage 90's.  Umami sed slow-carb, fu
 8-bit synth irony nisi wolf, street art dreamcatcher flannel placeat selvage health goth sriracha.  Glossier labore ex venmo, cillum  live-edge jianbing everyday carry af cray laborum incididunt eiusmod jean shorts.  Normcore slow-carb lyft letterpress, beard tilde art party.  Poke marfa incididunt tempor duis.  Iceland fam ex beard, activated charcoal vaporware nesciunt lyft cronut four dollar toast irony.  Officia  stumptown voluptate  unicorn culpa  bushwick.  Mollit  vero af marfa deserunt  flexitarian.
 
 
-```{r experimental,results='asis'}
+```{r experimental,echo=F,results='asis'}
 data.table::fread('https://raw.githubusercontent.com/UCB-MIDS/experiments-causality/master/data/GerberGreenBook_Chapter3_Donations.csv?token=ABNmuX-Q14rzQ4teItDenc9L5Wo2flncks5ZL5qEwA%3D%3D') %>% stargazer::stargazer(type = 'html',title = 'Something from W241 Experiments and Causality')
 ```
 
