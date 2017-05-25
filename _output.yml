@@ -8,6 +8,13 @@ bookdown::gitbook:
     toc:
       collapse: section
       scroll_highlight: yes
+      before: |
+        <li><a href="./">Oski Bear</a></li>
+      after: |
+        <li><a href="https://github.com/oskibear" target="blank">GitHub</a></li>
+        <li><a href="https://www.ischool.berkeley.edu/people/oski-bear" target="blank">UC Berkeley</a></li>
+        <li><a href="https://www.linkedin.com/in/oskibear/" target="blank">LinkedIn</a></li>
+        <li><a href="https://www.wired.com/2013/02/friendster-autopsy/" target="blank">Friendster</a></li>        
     sharing:
       facebook: no
       twitter: no
