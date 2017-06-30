@@ -2,6 +2,7 @@
 *
 #except these files
 !.gitignore
+!README.md
 !index.Rmd
 !01.Rmd
 !02.Rmd
@@ -10,6 +11,8 @@
 !_output.yml
 !_build.R
 !_deploy.sh
+!_feedback.sh
+!_rundock.sh
 !docs/
 !docs/*
 !docs/*/*
