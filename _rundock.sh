@@ -12,6 +12,11 @@ else
   WP=$2
 fi
 
+# pull fresh docker image
+echo ""
+echo "pulling container image..."
+docker pull w201rdada/portfolio
+
 # delete container if already running
 # save your work! memory will be lost but changes to local volume won't
 docker rm -f portfolio

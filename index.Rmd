@@ -6,6 +6,12 @@ site: bookdown::bookdown_site
 documentclass: book
 ---
 
+<!-- This won't be displayed but it will initialize your R session. Add any R libraries you need here. -->
+```{r init,include=FALSE,echo=FALSE}
+library(magrittr)
+```
+
+
 # Welcome!
 
 <!-- You can include images saved within your repo... -->
