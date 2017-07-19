@@ -17,8 +17,8 @@ echo "User-agent: *" > docs/robots.txt \
 
 # commit all and push
 git add .
-git commit -m "deploy"
+git commit -m "deploy" || true
 git status
 
 # interactively enter your password
-git push -u origin master
+git push origin master
