@@ -20,7 +20,7 @@ echo ""
 echo "running portfolio container..."
 
 # A hack to make docker ps list vertically for readability
-FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\nSIZE\t{{.Size}}\n"
 
 # Run container...
 docker run \
@@ -28,7 +28,7 @@ docker run \
   -e USER=oski -e PASSWORD=goldenbears -e USERID=$UID \
   -v $(pwd):/home/oski \
   w201rdada/portfolio \
-&& docker ps -a --format="$FORMAT" \
+&& docker ps -a -s --format="$FORMAT" \
 && echo "" \
 && echo "...success!" \
 && echo "  rstudio server listening on port $RS" \
