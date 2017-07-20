@@ -8,17 +8,14 @@
 git checkout master
 
 # assuming you've already built it, replace old docs with new _books build
-rm -rf docs/ \
-&& mv -u -T _book/ docs/ 
+cd /home/oski/ && rm -rf docs/ || mv -u -T _book/ docs/
 
 # site will be public so dissuade robots and search engines from crawling your page
 echo "User-agent: *" > docs/robots.txt \
 && echo "Disallow: /" >> docs/robots.txt
 
 # commit all and push
-git add .
-git commit -m "deploy" || true
-git status
+git add . && git commit -m "deploy" || true
 
 # interactively enter your password
 git push origin master

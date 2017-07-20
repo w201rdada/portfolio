@@ -1,4 +1,5 @@
 #!/bin/bash
+echo
 if [ -z $1]; then
   RS=1873
   echo "rstudio server port not set, setting to $RS, the year South Hall was built :)"
@@ -13,7 +14,7 @@ else
 fi
 
 # pull fresh docker image
-echo ""
+echo
 echo "pulling container image..."
 docker pull w201rdada/portfolio
 
@@ -21,7 +22,7 @@ docker pull w201rdada/portfolio
 # save your work! memory will be lost but changes to local volume won't
 docker rm -f portfolio
 
-echo ""
+echo
 echo "running portfolio container..."
 
 # A hack to make docker ps list vertically for readability
@@ -34,7 +35,7 @@ docker run \
   -v $(pwd):/home/oski \
   w201rdada/portfolio \
 && docker ps -a -s --format="$FORMAT" \
-&& echo "" \
+&& echo \
 && echo "...success!" \
 && echo "  rstudio server listening on port $RS" \
 && echo "    user: oski" \
