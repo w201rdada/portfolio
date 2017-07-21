@@ -8,7 +8,7 @@
 git checkout master
 
 # assuming you've already built it, replace old docs with new _books build
-cd /home/oski/ && rm -rf docs/ || mv -u -T _book/ docs/
+cd /home/oski/ && rm -rf docs/ && mv -u -T _book/ docs/
 
 # site will be public so dissuade robots and search engines from crawling your page
 echo "User-agent: *" > docs/robots.txt \
