@@ -32,7 +32,7 @@ FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOM
 docker run \
   --name portfolio -d -p $RS:8787 -p $WP:2015 \
   -e USER=oski -e PASSWORD=goldenbears -e USERID=$UID \
-  -v $(pwd):/home/oski \
+  -v "$(pwd)":/home/oski \
   w201rdada/portfolio \
 && docker ps -a -s --format="$FORMAT" \
 && echo \
