@@ -38,10 +38,15 @@ docker run \
 && DIP="$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' portfolio)" \
 && echo \
 && echo "...success!" \
-&& echo "  rstudio server listening at http://localhost:$RS or http://$DIP:$RS" \
+&& echo "  rstudio server listening at http://localhost:$RS" \
 && echo "    user: oski" \
 && echo "    pass: goldenbears" \
-&& echo "  web preview listening at http://localhost:$WP or http://$DIP:$RS" \
+&& echo "  web preview listening at http://localhost:$WP" \
+&& echo \
+&& echo "If localhost does not work try your docker-machine ip instead." \
+&& echo "To obtain the address paste the following into your host shell:" \
+&& echo echo http://'$(docker-machine ip)':$RS \
+&& echo
 
 # Arguments to docker run:
 # --name the container "portfolio". Helps prevent proliferation of containers.
