@@ -35,12 +35,13 @@ docker run \
   -v "$(pwd)":/home/oski \
   w201rdada/portfolio \
 && docker ps -a -s --format="$FORMAT" \
+&& DIP="$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' portfolio)" \
 && echo \
 && echo "...success!" \
-&& echo "  rstudio server listening on port $RS" \
+&& echo "  rstudio server listening at http://localhost:$RS or http://$DIP:$RS" \
 && echo "    user: oski" \
 && echo "    pass: goldenbears" \
-&& echo "  web preview listening on port $WP"
+&& echo "  web preview listening at http://localhost:$WP or http://$DIP:$RS" \
 
 # Arguments to docker run:
 # --name the container "portfolio". Helps prevent proliferation of containers.
