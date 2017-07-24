@@ -11,6 +11,7 @@
 !_output.yml
 !_build.sh
 !_deploy.sh
+!_build+deploy.sh
 !_feedback.sh
 !_rundock.sh
 !docs/
