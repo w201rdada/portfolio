@@ -18,6 +18,10 @@ echo
 echo "Enter the GitHub username of the person to whom you want to provide feedback."
 echo -n "Their username: "
 read tGHU
+git clone --depth 1 --no-checkout https://github.com/w201rdada/portfolio-$tGHU || true
+cd portfolio-$tGHU
+git checkout master
+git pull
 echo
 echo "Enter your name and an email associated with your GitHub.com account, to authenticate access to private repositories and so they know who provided feedback."
 read -p "My first and last name: " mN
@@ -28,10 +32,6 @@ git config --global user.name "$mN"
 git config --global user.email "$mE"
 
 BRANCH=$(echo "$mN" | sed "s|^\([^ ]*\).*|feedback_\1_$(date +%F)|")
-git clone --depth 1 --no-checkout https://github.com/w201rdada/portfolio-$tGHU || true
-
-cd portfolio-$tGHU
-git pull
 git checkout -b $BRANCH || git checkout $BRANCH
 chown oski . *
 #chmod u=rxw . *
