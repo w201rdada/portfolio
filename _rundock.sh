@@ -35,16 +35,23 @@ docker run \
   -v "$(pwd)":/home/oski \
   w201rdada/portfolio \
 && docker ps -a -s --format="$FORMAT" \
-&& DIP="$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' portfolio)" \
+&& DIP="$(dig +short myip.opendns.com @resolver1.opendns.com)" \
 && echo \
-&& echo "...success!" \
-&& echo "  rstudio server listening at http://localhost:$RS" \
-&& echo "    user: oski" \
-&& echo "    pass: goldenbears" \
-&& echo "  web preview listening at http://localhost:$WP" \
-&& echo \
-&& echo "If localhost does not work try your docker-machine ip instead." \
-&& echo "To obtain the address paste the following into your host shell:" \
+&& echo "...success!
+  rstudio server listening locally at
+	http://localhost:$RS
+  or externally at
+	http://$DIP:$RS
+    user: oski
+    pass: goldenbears
+
+  web preview listening locally at
+	http://localhost:$WP
+  or externally at
+	http://$DIP:$WP
+
+  If localhost does not work try your docker-machine ip instead.
+  To obtain the address paste the following into your host shell:" \
 && echo echo http://'$(docker-machine ip)':$RS \
 && echo
 
