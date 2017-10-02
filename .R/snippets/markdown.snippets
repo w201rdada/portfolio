@@ -1,0 +1,40 @@
+snippet [
+	[${1:label}](${2:location})
+
+snippet ![
+	![${1:label}](${2:location})
+
+snippet r
+	```{r ${1:label}, ${2:options}}
+	${0}
+	```
+
+snippet rcpp
+	```{r, engine='Rcpp'}
+	#include <Rcpp.h>
+	using namespace Rcpp;
+	
+	${0}
+	
+	```
+
+snippet !
+	<!--${1:comment}-->
+
+snippet !h
+	<!--Work on your headings. They should help tell the story, and they should at least indicate what the section will be about.${1}-->
+
+snippet !s
+	<!--Write a slug that is a very short handle for the idea. This will also serve as the sub-url for your page. The slug cannot have spaces inside the brackets. {-#pithy-slug} -->
+
+snippet !f
+	<!--Don't include bibliographic information in the body of the text. That is what citations are for. Do footnotes like this: http://pandoc.org/MANUAL.html#footnotes. We will also move toward citations like this: https://bookdown.org/yihui/bookdown/citations.html -->
+
+snippet !r
+	<!--Don't point to references without explaining what the references say. Assume your reader will not follow your sources or read your footnotes. Everything necessary to understand your argument should be stated in the body of the text.-->
+
+snippet !k
+	<!--Nice keywords, but can you add ones to point toward your analytical method? What term would help a data science nerd find you?-->
+
+snippet !b
+	<!--Bullets should not introduce paragraphs or sentences. Avoiding bullets also helps you attend to the transitions between sentences. Are they flowing in a paragraph that makes sense?-->

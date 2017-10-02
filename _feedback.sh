@@ -20,8 +20,28 @@ echo -n "Their username: "
 read tGHU
 git clone --depth 1 --no-checkout https://github.com/w201rdada/portfolio-$tGHU || true
 cd portfolio-$tGHU
+echo
+echo "Is the date of the last commit close enough to the due date for this assignment?
+Or, does the commit message indicate the correct submission?
+If the commit is old they may not yet have submitted."
+git log -1
+echo
+echo "Type YES (y) if so, or NO (n) to exit the script."
+while true; do
+  read -p "Y or N: " response
+  case $response in
+    [Yy] ) break;;
+    [Nn] ) exit;;
+    * ) echo "Please answer Y or N.";;
+  esac
+done
 git checkout master
+echo "Pulling most recent changes to master. You may be prompted for your GitHub credentials again."
 git pull
+while [ $? -ne 0 ]; do
+    echo "Did you enter your github credentials correctly? If you did, you may not have repository permissions."
+    git pull
+done
 echo
 echo "Enter your name and an email associated with your GitHub.com account, to authenticate access to private repositories and so they know who provided feedback."
 read -p "My first and last name: " mN
