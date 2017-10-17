@@ -2,6 +2,7 @@
 *
 #except these files
 !.gitignore
+!.gitattributes
 !README.md
 !index.Rmd
 !01.Rmd

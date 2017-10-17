@@ -2,7 +2,7 @@
 
 # usage: docker exec -it portfolio ./home/oski/_feedback.sh
 # Don't run this from Rstudio Server. Run it from the terminal where you launched the container
-
+git config --global core.autocrlf input
 cd /home/oski/feedback/ || {
   su -c "mkdir /home/oski/feedback/" oski
   chmod -R u=rxw /home/oski/feedback/
