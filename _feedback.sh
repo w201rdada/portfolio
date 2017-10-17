@@ -14,19 +14,19 @@ if [ $? -eq 1 ]; then
   exit 0
 fi
 echo "Feedback repositories will be downloaded to /home/oski/feedback/"
-echo
-echo "Enter the GitHub username of the person to whom you want to provide feedback."
+echo "
+Enter the GitHub username of the person to whom you want to provide feedback."
 echo -n "Their username: "
 read tGHU
 git clone --depth 1 --no-checkout https://github.com/w201rdada/portfolio-$tGHU || true
 cd portfolio-$tGHU
-echo
-echo "Is the date of the last commit close enough to the due date for this assignment?
+echo "
+Is the last commit date close enough to the due date for this assignment?
 Or, does the commit message indicate the correct submission?
 If the commit is old they may not yet have submitted."
 git log -1
-echo
-echo "Type YES (y) if so, or NO (n) to exit the script."
+echo "
+Type YES (y) if so, or NO (n) to exit the script."
 while true; do
   read -p "Y or N: " response
   case $response in
@@ -36,14 +36,19 @@ while true; do
   esac
 done
 git checkout master
-echo "Pulling most recent changes to master. You may be prompted for your GitHub credentials again."
+echo "
+Pulling most recent changes to master. You may be prompted for your GitHub
+credentials again."
 git pull
 while [ $? -ne 0 ]; do
-    echo "Did you enter your github credentials correctly? If you did, you may not have repository permissions."
+    echo "Did you enter your github credentials correctly? If you did, you may not have
+repository permissions."
     git pull
 done
-echo
-echo "Enter your name and an email associated with your GitHub.com account, to authenticate access to private repositories and so they know who provided feedback."
+echo "
+Enter your name and an email associated with your GitHub.com account, to
+authenticate access to private repositories and so they know who provided
+feedback."
 read -p "My first and last name: " mN
 read -p "My email: " mE
 echo
@@ -56,11 +61,19 @@ git checkout -b $BRANCH || git checkout $BRANCH
 chown oski . *
 #chmod u=rxw . *
 
-echo
-echo "Now you're on a new branch. You can leave feedback by directly editing text files. You can make any changes you want without worrying about messing up the originals. Use html comments <!-- I'm a comment --> in Rmd files so they won't accidentally be rendered."
-echo
-echo "When you are finished commenting, type PUSH to commit changes to all modified files, push them to the remote, and make a pull request for the author to review. You will be prompted to enter a message for your pull commit. "
-echo "If you don't want to PUSH, type EXIT to stop this script, and manually commit and issue the pull request. You will still be checked out on the feedback branch and can continue working until you're ready."
+echo "
+Now you're on a new branch. You can leave feedback by directly editing text
+files. You can make any changes you want without worrying about messing up the
+originals. Use html comments <!-- I'm a comment --> in Rmd files so they won't
+accidentally be rendered.
+
+When you are finished commenting, type PUSH to commit changes to all modified
+files and push them to the remote.
+
+If you don't want to PUSH, type EXIT to stop this script, and manually commit
+and push issue the pull request. You will still be checked out on the feedback
+branch and can continue working until you're ready."
+
 while true; do
   read -p "PUSH or EXIT: " response
   case $response in
@@ -74,5 +87,22 @@ git pull
 git add $(git status --porcelain | grep '^ M' | cut -c4-)
 git commit -m"Feedback from $mN."
 git push origin $BRANCH
+echo "Your commit is now viewable on the remote at:
+
+https://github.com/w201rdada/portfolio-$tGHU/commit/$BRANCH
+
+Follow the link if you wish to make additional comments to the commit. When
+you are finished, enter PR to make a pull request for the author to review.
+
+You will be prompted to enter a message for your pull commit. The first line
+will be the title of your pull request. Any lines after that will be written
+in a description under the title."
+while true; do
+  read -p "PR or EXIT: " response
+  case $response in
+    [Pp][Rr] ) break;;
+    [Ee][Xx][Ii][Tt] ) exit;;
+    * ) echo "Please answer PR or EXIT.";;
+  esac
+done
 hub pull-request
-#-m"Feedback from $mN."
