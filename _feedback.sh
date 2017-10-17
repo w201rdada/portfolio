@@ -2,7 +2,6 @@
 
 # usage: docker exec -it portfolio ./home/oski/_feedback.sh
 # Don't run this from Rstudio Server. Run it from the terminal where you launched the container
-git config --global core.autocrlf input
 cd /home/oski/feedback/ || {
   su -c "mkdir /home/oski/feedback/" oski
   chmod -R u=rxw /home/oski/feedback/
@@ -20,6 +19,7 @@ echo -n "Their username: "
 read tGHU
 git clone --depth 1 --no-checkout https://github.com/w201rdada/portfolio-$tGHU || true
 cd portfolio-$tGHU
+git config --global core.autocrlf input
 echo
 git log -1
 echo "
