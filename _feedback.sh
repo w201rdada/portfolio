@@ -20,13 +20,15 @@ echo -n "Their username: "
 read tGHU
 git clone --depth 1 --no-checkout https://github.com/w201rdada/portfolio-$tGHU || true
 cd portfolio-$tGHU
+echo
+git log -1
 echo "
 Is the last commit date close enough to the due date for this assignment?
 Or, does the commit message indicate the correct submission?
-If the commit is old they may not yet have submitted."
-git log -1
-echo "
-Type YES (y) if so, or NO (n) to exit the script."
+If the commit is old they may not yet have submitted.
+
+Type YES (y) if so, or NO (n) to exit the script.
+"
 while true; do
   read -p "Y or N: " response
   case $response in
@@ -65,14 +67,21 @@ echo "
 Now you're on a new branch. You can leave feedback by directly editing text
 files. You can make any changes you want without worrying about messing up the
 originals. Use html comments <!-- I'm a comment --> in Rmd files so they won't
-accidentally be rendered.
+accidentally be rendered. You may prefer to leave comments on GitHub.com after
+pushing your commit.
 
-When you are finished commenting, type PUSH to commit changes to all modified
+When you are finished editing, type PUSH to commit changes to all modified
 files and push them to the remote.
 
 If you don't want to PUSH, type EXIT to stop this script, and manually commit
 and push issue the pull request. You will still be checked out on the feedback
-branch and can continue working until you're ready."
+branch and can continue working until you're ready.
+
+If the file was flawless or you made no edits, you can EXIT and offer feedback
+directly to a relevant commit on the user's remote master branch at:
+
+https://github.com/w201rdada/portfolio-$tGHU/commit/
+"
 
 while true; do
   read -p "PUSH or EXIT: " response
