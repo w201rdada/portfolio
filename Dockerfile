@@ -36,7 +36,7 @@ RUN curl https://getcaddy.com | bash
 # fun with line endings
 RUN git config --global core.autocrlf input
 
-COPY /srv/app/src/. /home/rstudio/
+COPY . /home/rstudio/
 
 EXPOSE 80 443 2015
 
