@@ -42,3 +42,4 @@ EXPOSE 80 443 2015
 
 USER ${NB_USER}
 
+CMD ["/bin/sh", "-c", "test -f $HOME/.copied || cp -Rf /srv/app/src/. $HOME/; touch $HOME/.copied"]
