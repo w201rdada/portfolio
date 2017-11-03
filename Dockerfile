@@ -1,4 +1,4 @@
-FROM gcr.io/f17w201rdada/portfolio:fa17
+FROM w201rdada/repfolio:fa17
 MAINTAINER "Brooks Ambrose" brooksambrose@berkeley.edu
 
 COPY . /home/rstudio/
