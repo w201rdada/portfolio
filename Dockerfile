@@ -36,8 +36,9 @@ RUN curl https://getcaddy.com | bash
 # fun with line endings
 RUN git config --global core.autocrlf input
 
+ADD .
+
 EXPOSE 80 443 2015
 
 USER ${NB_USER}
 
-ENTRYPOINT []
