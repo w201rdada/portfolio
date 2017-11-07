@@ -12,6 +12,7 @@ if [ $? -eq 1 ]; then
   echo "This script is intended For use inside w201rdada/portfolio container in /home/oski/feedback directory."
   exit 0
 fi
+git config --global core.autocrlf input
 echo "Feedback repositories will be downloaded to /home/oski/feedback/"
 echo "
 Enter the GitHub username of the person to whom you want to provide feedback."
@@ -19,7 +20,6 @@ echo -n "Their username: "
 read tGHU
 git clone --depth 1 --no-checkout https://github.com/w201rdada/portfolio-$tGHU || true
 cd portfolio-$tGHU
-git config --global core.autocrlf input
 echo
 git log -1
 echo "
