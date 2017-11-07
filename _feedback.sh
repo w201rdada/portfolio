@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# usage: docker exec -it portfolio ./home/oski/_feedback.sh
+# usage: docker exec -it portfolio ./home/rstudio/_feedback.sh
 # Don't run this from Rstudio Server. Run it from the terminal where you launched the container
-cd /home/oski/feedback/ || {
-  su -c "mkdir /home/oski/feedback/" oski
-  chmod -R u=rxw /home/oski/feedback/
-  cd /home/oski/feedback/
+cd /home/rstudio/feedback/ || {
+  su -c "mkdir /home/rstudio/feedback/" rstudio
+  chmod -R u=rxw /home/rstudio/feedback/
+  cd /home/rstudio/feedback/
   echo "So we made it ;o"
 }
 if [ $? -eq 1 ]; then
-  echo "This script is intended For use inside w201rdada/portfolio container in /home/oski/feedback directory."
+  echo "This script is intended For use inside w201rdada/portfolio container in /home/rstudio/feedback directory."
   exit 0
 fi
 git config --global core.autocrlf input
-echo "Feedback repositories will be downloaded to /home/oski/feedback/"
+echo "Feedback repositories will be downloaded to /home/rstudio/feedback/"
 echo "
 Enter the GitHub username of the person to whom you want to provide feedback."
 echo -n "Their username: "
@@ -60,7 +60,7 @@ git config --global user.email "$mE"
 
 BRANCH=$(echo "$mN" | sed "s|^\([^ ]*\).*|feedback_\1_$(date +%F)|")
 git checkout -b $BRANCH || git checkout $BRANCH
-chown oski . *
+chown rstudio . *
 #chmod u=rxw . *
 
 echo "

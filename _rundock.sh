@@ -31,8 +31,8 @@ FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOM
 # Run container...
 docker run \
   --name portfolio -d -p $RS:8787 -p $WP:2015 \
-  -e USER=oski -e PASSWORD=goldenbears -e USERID=$UID \
-  -v "$(pwd)":/home/oski \
+  -e USER=rstudio -e PASSWORD=goldenbears -e USERID=$UID \
+  -v "$(pwd)":/home/rstudio \
   w201rdada/portfolio \
 && docker ps -a -s --format="$FORMAT" \
 && DIP="$(dig +short myip.opendns.com @resolver1.opendns.com)" \
@@ -42,7 +42,7 @@ docker run \
 	http://localhost:$RS
   or externally at
 	http://$DIP:$RS
-    user: oski
+    user: rstudio
     pass: goldenbears
 
   web preview listening locally at
@@ -64,7 +64,7 @@ docker run \
 # -e execute shell commands when container runs.
 #  The variables are used by ./init to set up the user within the container.
 #  See base image docs: https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image#custom-use
-# -v this maps your host's working directory to the oski user's home directory within the container
+# -v this maps your host's working directory to the rstudio user's home directory within the container
 # w201rdada/portfolio is the dockerhub image from which to run the container
 
 # docker ps: lists -a all running and stopped containers

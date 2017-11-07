@@ -7,7 +7,7 @@
 # make sure you're on the master branch
 git checkout master
 
-cd /home/oski \
+cd /home/rstudio/ \
 && rm -rf docs/ \
 && mv -u -T _book/ docs/
 
