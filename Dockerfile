@@ -1,8 +1,5 @@
-FROM w201rdada/repfolio:fa17
-MAINTAINER "Brooks Ambrose" brooksambrose@berkeley.edu
-
+FROM w201rdada/portfolio:fa17
+USER root
 COPY . /home/rstudio/
-
-EXPOSE 80 443 2015
-
-USER ${NB_USER}
+RUN chown -R rstudio:rstudio * .*
+USER rstudio
