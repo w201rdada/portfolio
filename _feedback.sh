@@ -12,7 +12,7 @@ if [ $? -eq 1 ]; then
   echo "This script is intended For use inside w201rdada/portfolio container in /home/rstudio/feedback directory."
   exit 0
 fi
-git config --global core.autocrlf input
+
 echo "Feedback repositories will be downloaded to /home/rstudio/feedback/"
 echo "
 Enter the GitHub username of the person to whom you want to provide feedback."
