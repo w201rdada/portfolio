@@ -18,7 +18,6 @@ Disallow: /" > docs/robots.txt
 # site will be public so dissuade robots and search engines from crawling your page
 git add . \
 && git commit -m "deploy" || true \
-&& git status \
 && echo '
 Ready to push with authorization.
 In Rstudio use menu "Tools > Shell..." and enter:
