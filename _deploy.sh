@@ -19,7 +19,8 @@ Disallow: /" > docs/robots.txt
 git add . \
 && git commit -m "deploy" || true \
 && git status \
-&& echo 'Ready to push with authorization.
+&& echo '
+Ready to push with authorization.
 In Rstudio use menu "Tools > Shell..." and enter:
 
 git push origin master
