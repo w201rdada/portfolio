@@ -1,3 +1,5 @@
+[![Binder](http://hub.w201rdada.org/badge.svg)](http://hub.w201rdada.org/v2/gh/w201rdada/portfolio/master?filepath=rstudio)
+
 # My Portfolio
 
 This template gives you building blocks for completing your student portfolio for W201 RDADA. The portfolio will be a place for you to complete your individual assignments 1-3, and will also be where you provide peer review to other students in the class for participation credit. Beyond course requirements though, let your fork of this repo be a place to stretch your data science imagination. Whatever ideas brought you to data science and MIDS to begin with, there is no time like the present to give a voice to those thoughts and to share them with others.
