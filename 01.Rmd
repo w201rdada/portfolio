@@ -1,6 +1,6 @@
 # My first cool idea {#slug-one}
 
-#### Keywords
+#### Keywords {-}
 
 yaba, daba, do
 
