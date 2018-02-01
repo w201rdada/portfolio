@@ -4,6 +4,9 @@ author: "Oski Bear"
 date: "MIDS Fall 2017"
 site: bookdown::bookdown_site
 documentclass: book
+bibliography: references.bib
+link-citations: yes
+biblio-style: apalike
 ---
 
 <!-- This won't be displayed but it will initialize your R session. Add any R libraries you need here. -->
