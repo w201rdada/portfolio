@@ -16,6 +16,8 @@
 !_build+deploy.R
 !_feedback.sh
 !_rundock.sh
+!img/
+!img/*
 !docs/
 !docs/*
 !docs/*/*
