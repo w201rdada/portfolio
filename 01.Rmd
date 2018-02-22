@@ -1,5 +1,9 @@
 # My first cool idea {#slug-one}
 
+#### Abstract {-}
+
+(ref:abs1)
+
 #### Keywords {-}
 
 yaba, daba, do
