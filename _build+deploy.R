@@ -1,6 +1,5 @@
 # BUILD
-# Run the build line to render .Rmd to .html, and to serve the preview website
-# on the preview port
+# Run the build line to render .Rmd to .html
 
 system("bash _build.sh",wait=T)
 
